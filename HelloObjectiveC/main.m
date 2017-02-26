@@ -14,6 +14,11 @@ int main(int argc, const char * argv[]) {
         int odometerAsInteger = (int)odometer;
         NSLog(@"You've driven %.1f miles", odometer);
         NSLog(@"You've driven %d miles", odometerAsInteger);
+        
+        NSArray *models = @[@"Ford", @"Honda", @"Nissan", @"Porsche"];
+        for (id model in models) {
+            NSLog(@"%@", model);
+        }
     }
     return 0;
 }
