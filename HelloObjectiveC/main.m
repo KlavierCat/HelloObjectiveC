@@ -14,7 +14,11 @@
 #define RAD_TO_DEG(radians) (radians * (180.0 / PI))
 
 // typedef keyword: create new data type or redefine existing ones
-typedef unsigned char ColorComponent;
+typedef struct {
+    unsigned char red;
+    unsigned char green;
+    unsigned char blue;
+} Color;
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -31,10 +35,8 @@ int main(int argc, const char * argv[]) {
         double angle = PI / 2;
         NSLog(@"%f", RAD_TO_DEG(angle));
         
-        ColorComponent red = 255;
-        ColorComponent green = 160;
-        ColorComponent blue = 0;
-        NSLog(@"Your paint job is (R: %hhu, G: %hhu, B: %hhu)", red, green, blue);
+        Color carColor = {255, 160, 0};//initializer syntax
+        NSLog(@"Your paint job is (R: %hhu, G: %hhu, B: %hhu)", carColor.red, carColor.green, carColor.blue);
     }
     return 0;
 }
