@@ -20,6 +20,13 @@ typedef struct {
     unsigned char blue;
 } Color;
 
+typedef enum {
+    FORD,
+    HONDA,
+    NISSAN,
+    PORSCHE
+} CarModel;
+
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         double odometer = 9200.8;
@@ -37,6 +44,20 @@ int main(int argc, const char * argv[]) {
         
         Color carColor = {255, 160, 0};//initializer syntax
         NSLog(@"Your paint job is (R: %hhu, G: %hhu, B: %hhu)", carColor.red, carColor.green, carColor.blue);
+        
+        CarModel myCar = NISSAN;
+        switch (myCar) {
+            case FORD:
+            case PORSCHE:
+                NSLog(@"You like Western cars?");
+                break;
+            case HONDA:
+            case NISSAN:
+                NSLog(@"You like Japanese cars?");
+                break;
+            default:
+                break;
+        }
     }
     return 0;
 }
